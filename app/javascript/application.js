@@ -4,3 +4,5 @@ import "@hotwired/turbo-rails"
 import * as bootstrap from "bootstrap"
 // import Rails from "@rails/ujs"
 Rails.start()
+import "@fortawesome/fontawesome-free/js/all";
+library.add(far, fas, fab)

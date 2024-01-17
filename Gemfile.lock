@@ -90,8 +90,26 @@ GEM
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     erubi (1.12.0)
+    erubis (2.7.0)
+    ffi (1.16.3)
+    font-awesome-sass (6.5.1)
+      sassc (~> 2.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
+    haml (6.3.0)
+      temple (>= 0.8.2)
+      thor
+      tilt
+    haml-rails (2.1.0)
+      actionpack (>= 5.1)
+      activesupport (>= 5.1)
+      haml (>= 4.0.6)
+      railties (>= 5.1)
+    html2haml (2.3.0)
+      erubis (~> 2.7.0)
+      haml (>= 4.0)
+      nokogiri (>= 1.6.0)
+      ruby_parser (~> 3.5)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.1.5)
@@ -172,11 +190,23 @@ GEM
     reline (0.3.3)
       io-console (~> 0.5)
     rexml (3.2.5)
+    ruby_parser (3.21.0)
+      racc (~> 1.5)
+      sexp_processor (~> 4.16)
     rubyzip (2.3.2)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     selenium-webdriver (4.8.6)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    sexp_processor (4.17.1)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -186,7 +216,9 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
+    temple (0.10.3)
     thor (1.2.1)
+    tilt (2.3.0)
     timeout (0.3.2)
     turbo-rails (1.4.0)
       actionpack (>= 6.0.0)
@@ -220,12 +252,16 @@ DEPENDENCIES
   capybara
   cssbundling-rails
   debug
+  font-awesome-sass (~> 6.1)
+  haml-rails (~> 2.1)
+  html2haml (~> 2.3)
   importmap-rails
   jbuilder
   jsbundling-rails (~> 1.2)
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4)
+  sassc-rails
   selenium-webdriver
   sprockets-rails
   stimulus-rails
