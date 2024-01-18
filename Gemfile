@@ -46,7 +46,7 @@ gem "bootsnap", require: false
 gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.2"
 
 
 ###################################################################
@@ -54,7 +54,9 @@ gem "cssbundling-rails"
 gem "font-awesome-sass", "~> 6.1" 
 gem 'haml-rails', '~> 2.1'
 gem 'html2haml', '~> 2.3'
-
+gem 'simple_form', '~> 5.3'
+gem 'faker', '~> 3.2', '>= 3.2.3'
+gem 'devise', '~> 4.9', '>= 4.9.3'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

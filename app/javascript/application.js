@@ -6,3 +6,6 @@ import * as bootstrap from "bootstrap"
 Rails.start()
 import "@fortawesome/fontawesome-free/js/all";
 library.add(far, fas, fab)
+
+import "trix"
+import "@rails/actiontext"
