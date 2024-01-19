@@ -57,6 +57,7 @@ gem 'html2haml', '~> 2.3'
 gem 'simple_form', '~> 5.3'
 gem 'faker', '~> 3.2', '>= 3.2.3'
 gem 'devise', '~> 4.9', '>= 4.9.3'
+gem 'friendly_id', '~> 5.5', '>= 5.5.1'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

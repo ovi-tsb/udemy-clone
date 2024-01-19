@@ -1,6 +1,6 @@
 %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
   .container-fluid    
-    %a.navbar-brand{:href => "#"} Rubygems
+    %a.navbar-brand{:href => "/"} Rubygems
     %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarSupportedContent", "data-bs-toggle" => "collapse", :type => "button"}
       %span.navbar-toggler-icon
     #navbarSupportedContent.collapse.navbar-collapse
@@ -14,10 +14,15 @@
             = link_to courses_path, class: 'nav-link' do
               .fa.fa-book
               Courses
+          %li.nav-item{class: "#{'active font-weight-bold' if current_page?(courses_path)}"}
+            = link_to new_course_path, class: 'nav-link' do
+              .fa.fa-plus
+              New Courses
+            
         .form-inline.my-2.my-lg-0
-          = form_tag(root_path, method: :get) do
+          = form_tag(courses_path, method: :get) do
             .input-group
-              = text_field_tag :name, params[:name], autocomplete: 'off', placeholder: "Search", class: 'form-control-sm'
+              = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search", class: 'form-control-sm'
               %span.input-group-append
                 %button.btn.btn-primary.btn-sm{:type => "submit"}
                   %span.fa.fa-search{"aria-hidden" => "true"}
