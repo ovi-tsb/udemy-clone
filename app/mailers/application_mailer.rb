@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "support@udemy-clone-ovi.com"
+  default from: "admin@online-business-solutions.ca"
   layout "mailer"
 end

@@ -6,6 +6,23 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
+
+
+  config.action_mailer.smtp_settings = {
+      port: 587,
+      address: Rails.application.credentials.smtp.dig(:address),
+      user_name: Rails.application.credentials.smtp.dig(:user_name),
+      password: Rails.application.credentials.smtp.dig(:password),
+      authentication: :plain,
+      enable_starttls_auto: true
+    }
+  Rails.application.config.middleware.use ExceptionNotification::Rack,
+      email: {
+        # deliver_with: :deliver, # Rails >= 4.2.1 do not need this option since it defaults to :deliver_now
+        email_prefix: "[PREFIX] ",
+        sender_address: %("corsego error" <admin@online-business-solutions.ca>),
+        exception_recipients: %w[yshmarov@gmail.com]
+      }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
