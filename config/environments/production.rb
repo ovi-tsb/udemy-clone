@@ -2,7 +2,7 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
 
-  config.action_mailer.default_url_options = { :host => 'udemy-clone-ovi-8b57f8b1c21e.herokuapp.com', :protocol => 'https' }
+  config.action_mailer.default_url_options = { host: "https://udemy-clone-ovi-8b57f8b1c21e.herokuapp.com", protocol: "https" }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   
