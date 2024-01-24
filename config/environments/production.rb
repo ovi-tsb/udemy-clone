@@ -11,9 +11,9 @@ Rails.application.configure do
 
   config.action_mailer.smtp_settings = {
       port: 587,
-      address: Rails.application.credentials.dig(:smtp, :address),
-      user_name: Rails.application.credentials.dig(:smtp, :user_name),
-      password: Rails.application.credentials.dig(:smtp, :password),
+      address: Rails.application.credentials.dig(:aws, :ses_address),
+      user_name: Rails.application.credentials.dig(:aws, :ses_user_name),
+      password: Rails.application.credentials.dig(:aws, :ses_password),
       authentication: :plain,
       enable_starttls_auto: true
     }
