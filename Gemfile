@@ -60,6 +60,10 @@ gem 'devise', '~> 4.9', '>= 4.9.3'
 gem 'friendly_id', '~> 5.5', '>= 5.5.1'
 gem 'exception_notification', '~> 4.5'
 gem 'aws-sdk-s3'
+gem 'ransack', '~> 4.1', '>= 4.1.1' # searching
+gem 'public_activity', '~> 3.0' # see activity in web page
+gem 'rolify', '~> 6.0', '>= 6.0.1' # create rols to users
+gem 'pundit', '~> 2.3', '>= 2.3.1' # limit the access of users
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

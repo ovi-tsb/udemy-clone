@@ -9,5 +9,8 @@ class StaticPagesController < ApplicationController
   def privacy_policy
   end
 
+  def activity
+    @activities = PublicActivity::Activity.all
+  end
   
 end

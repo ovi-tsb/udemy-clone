@@ -1,7 +1,7 @@
 .card
   .card-header
     .fa.fa-user
-    = user.email
+    = link_to user.email, user_path(user)
   .card-footer
     Signed up
     = time_ago_in_words(user.created_at)
@@ -21,3 +21,9 @@
     .row
     = 'last_sign_in_ip'.humanize
     = user.last_sign_in_ip
+  .card-footer
+    - user.roles.each do |role|
+      .badge.bg-info
+        = role.name
+  - if policy(user).edit?
+    = link_to 'Edit roles', edit_user_path(user), class: 'btn btn-sm btn-warning'

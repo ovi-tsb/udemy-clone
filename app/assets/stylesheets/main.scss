@@ -1,12 +1,36 @@
-.card-text{
-	font-size: 0.6em;
+.text, .text-right{
+	font-size: 1em;
 	color: grey !important;
-	
+	margin-bottom: 10px;
 }
-.card-title{
-	font-size: 0.8em;
-	
+.text-center {
+	/*font-size: 0.7em;*/
+}
+.card  {
+	margin-bottom: 10px;
+}
+.card-text-custom {
+	margin-bottom: 10px;
+}
+.card-body {
+	min-width: 250px;
+}
+.card-title {
+	font-size: 1.4em;
+}
+.card-title a {
+	text-decoration: none;
+}
+.card-text {
+	font-size: 1.0em;
 }
  h1 {
 	color: #610b0b;
 }
+
+/*to remove check mark on input fields */
+.form-control.is-invalid{ background-image: none; }
+.form-control.is-valid{ background-image: none; }
+.form-select.is-invalid{ background-image: none; }
+.form-select.is-valid{ background-image: none; }
+/*to remove check mark on input fields */

@@ -75,6 +75,7 @@ SimpleForm.setup do |config|
 
   # Default class for buttons
   config.button_class = 'btn'
+  config.button_class = 'btn btn-success'
 
   # Method used to tidy up errors. Specify any Rails Array method.
   # :first lists the first message for each field.
