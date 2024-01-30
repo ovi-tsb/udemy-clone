@@ -1,5 +1,5 @@
-User.create!(email: '1@yahoo.com', password: '123456', password_confirmation: '123456')
-User.create!(email: '2@yahoo.com', password: '123456', password_confirmation: '123456')
+# User.create!(email: '1@yahoo.com', password: '123456', password_confirmation: '123456')
+# User.create!(email: '2@yahoo.com', password: '123456', password_confirmation: '123456')
 
 30.times do
   Course.create!([{
