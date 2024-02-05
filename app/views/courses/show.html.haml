@@ -2,5 +2,11 @@
 \/
 = link_to @course.title, course_path(@course)
 %p
-= render 'courses/course', course: @course
-
+.row
+  .col-lg-6
+    = render 'courses/course', course: @course
+  .col-lg-6.d-grid.gap-2
+    = link_to 'Add lesson', new_course_lesson_path(@course, @lesson), class: "btn btn-sm btn-primary btn-block"
+    %p
+    - @lessons.each do |lesson|
+      = render 'lessons/lesson', lesson: lesson

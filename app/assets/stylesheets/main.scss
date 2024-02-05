@@ -3,17 +3,20 @@
 	color: grey !important;
 	margin-bottom: 10px;
 }
-.text-center {
-	/*font-size: 0.7em;*/
+.card-header {
+	width: 100%;
 }
-.card  {
-	margin-bottom: 10px;
-}
+
 .card-text-custom {
 	margin-bottom: 10px;
 }
-.card-body {
-	min-width: 250px;
+.card {
+	border: 1px solid transparent;
+	box-shadow:0px 0px 0px 2px #E5E5E5 inset;
+	border-bottom: none;
+}
+.card-header {
+	border: none;
 }
 .card-title {
 	font-size: 1.4em;

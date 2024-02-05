@@ -19,8 +19,8 @@ Rails.application.configure do
       email: {
         # deliver_with: :deliver, # Rails >= 4.2.1 do not need this option since it defaults to :deliver_now
         email_prefix: "[PREFIX] ",
-        sender_address: %("udemy-clone error" <admin@online-business-solutions.ca>),
-        exception_recipients: %w[ovi_tsb.com]
+        sender_address: %("udemy-clone error" <support@udemy-clone.herokuapp.com>),
+        exception_recipients: %w[ovi_tsb@yahoo.com]
       }
   # Settings specified here will take precedence over those in config/application.rb.
 

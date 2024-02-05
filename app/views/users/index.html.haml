@@ -3,7 +3,7 @@
     Users
     .badge.bg-primary
       = @users.count
-.row.row-cols-1.row-cols-md-3.g-4
+.row.row-cols-1.row-cols-md-3.g-0.ml-3.gx-1.mb-2
   - @users.each do |user|
     = render 'users/user', user: user
   
