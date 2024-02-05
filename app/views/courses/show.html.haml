@@ -5,8 +5,8 @@
 .row
   .col-lg-6
     = render 'courses/course', course: @course
-  .col-lg-6.d-grid.gap-2
-    = link_to 'Add lesson', new_course_lesson_path(@course, @lesson), class: "btn btn-sm btn-primary btn-block"
+  .col-lg-6
+    = link_to 'Add lesson', new_course_lesson_path(@course, @lesson), class: "btn btn-sm btn-primary d-grid"
     %p
     - @lessons.each do |lesson|
       = render 'lessons/lesson', lesson: lesson
