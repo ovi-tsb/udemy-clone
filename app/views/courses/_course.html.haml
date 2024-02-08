@@ -18,7 +18,10 @@
             = course.level
     .card-footer
       .text-center
-        = number_to_currency(course.price)
+        / = number_to_currency(course.price)
+        = enrollment_button(course)
+        %br
+        = review_button(course)
     .card-footer
       .fa.fa-book
       = course.lessons.count

@@ -43,7 +43,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
 # Use Sass to process CSS
-gem "sassc-rails"
+gem "sass-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
@@ -65,6 +65,7 @@ gem 'public_activity', '~> 3.0' # see activity in web page
 gem 'rolify', '~> 6.0', '>= 6.0.1' # create rols to users
 gem 'pundit', '~> 2.3', '>= 2.3.1' # limit the access of users
 gem 'exception_notification', '~> 4.5' # sending emails with user errors in production
+gem 'pagy', '~> 6.4', '>= 6.4.3' # New pagination
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
