@@ -1,10 +1,12 @@
 - content_for :title do
   UdemyClone 
   \/ 
-  All courses
+  = action_name.humanize
+  courses
 %h3
   .text-center
-    Courses
+    = action_name.humanize
+    courses
     .badge.bg-primary
       = @courses.count
 
@@ -24,7 +26,17 @@
       = f.search_field :price_eq, placeholder: 'Price', class: 'form-control form-control-sm'
       = f.label :teacher
       = f.search_field :user_email_cont, placeholder: 'Email', class: 'form-control form-control-sm'
+      .row
+      = sort_link(@ransack_courses, :price, "Price Sorting")
+      .row
+      = sort_link(@ransack_courses, :average_rating, "Top Rated")
+      .row
+      = sort_link(@ransack_courses, :enrollments_count, "Most Popular")
+      .row
+      = sort_link(@ransack_courses, :created_at, "Fresh")
+      .row
       = f.submit
+      .row
       = link_to 'refresh', @ransack_path
   .col-md-10
     != pagy_bootstrap_nav(@pagy)

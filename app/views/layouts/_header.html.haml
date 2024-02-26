@@ -43,9 +43,13 @@
                 = link_to purchased_courses_path, class: "dropdown-item" do
                   .fa.fa-graduation-cap
                   Purchased courses
+                  .badge.bg-danger
+                    = current_user.enrollments_count
                 = link_to pending_review_courses_path, class: "dropdown-item" do
                   .fa.fa-star
                   Pending review
+                  .badge.bg-danger
+                    = current_user.enrollments.pending_review.count
           - if current_user.has_role?(:teacher)
             %li.nav-item.dropdown
               %a#teacherDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
@@ -57,10 +61,15 @@
                   New Course
                 = link_to created_courses_path, class: "dropdown-item" do
                   .fa.fa-graduation-cap
-                  My courses
+                  Created courses
+                  .badge.bg-danger
+                    = current_user.courses_count
                 = link_to my_students_enrollments_path, class: "dropdown-item" do
                   .fa.fa-users
                   My students
+                  .badge.bg-danger
+                    = current_user.enrollments.count
+                    / = Enrollment.joins(:course).where(courses: {user: :current_user}).count
                 
           - if current_user.has_role?(:admin)
             %li.nav-item.dropdown
@@ -71,9 +80,13 @@
                 = link_to users_path, class: "dropdown-item" do
                   .fa.fa-lock-open
                   Users
+                  .badge.bg-danger
+                    = User.count
                 = link_to enrollments_path, class: "dropdown-item" do
                   .fa.fa-users
                   Enrollments
+                  .badge.bg-danger
+                    = Enrollment.count
                 = link_to activity_path, class: "dropdown-item" do
                   .fa.fa-bell
                   Activity 
@@ -87,6 +100,9 @@
             %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"}
               - if current_user.has_role?(:admin)
                 .badge.bg-success
+                  %b= current_user.username
+              - elsif current_user.has_role?(:teacher)
+                .badge.bg-info
                   %b= current_user.username
               - else
                 %b= current_user.username

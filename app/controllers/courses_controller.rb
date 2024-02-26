@@ -35,6 +35,7 @@ class CoursesController < ApplicationController
   # GET /courses/1 or /courses/1.json
   def show
     @lessons = @course.lessons
+    @enrollments_with_review = @course.enrollments.reviewed
   end
 
   # GET /courses/new
@@ -82,11 +83,14 @@ class CoursesController < ApplicationController
   # DELETE /courses/1 or /courses/1.json
   def destroy
     authorize @course
-    @course.destroy
+    if @course.destroy
 
-    respond_to do |format|
-      format.html { redirect_to courses_url, notice: "Course was successfully destroyed." }
-      format.json { head :no_content }
+      respond_to do |format|
+        format.html { redirect_to courses_url, notice: "Course was successfully destroyed." }
+        format.json { head :no_content }
+      end
+    else
+      redirect_to @course, alert: "Course has enrollments. Can not be  destroyed."
     end
   end
 

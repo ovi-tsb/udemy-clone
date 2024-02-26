@@ -9,6 +9,8 @@ class LessonsController < ApplicationController
   # GET /lessons/1 or /lessons/1.json
   def show
     authorize @lesson
+    current_user.view_lesson(@lesson)
+    @lessons = @course.lessons
   end
 
   # GET /lessons/new
@@ -59,7 +61,7 @@ class LessonsController < ApplicationController
     authorize @lesson
    @lesson.destroy
     respond_to do |format|
-      format.html { redirect_to course_lesson_path(@course), notice: "Lesson was successfully destroyed." }
+      format.html { redirect_to course_path(@course), notice: "Lesson was successfully destroyed." }
       format.json { head :no_content }
     
     end
