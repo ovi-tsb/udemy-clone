@@ -6,16 +6,7 @@
         = link_to course.title, course_path(course)
       .card-text
         = simple_format(course.short_description)
-    / .card-footer
-    /   .row
-    /     .col-md-6
-    /       .text
-    /         .fa.fa-globe-africa
-    /         = course.language
-    /     .col-md-6
-    /       .text-right
-    /         .fa.fa-signal
-    /         = course.level
+    
     .card-footer
       .text-center
         / = number_to_currency(course.price)
@@ -58,3 +49,21 @@
           = link_to 'Delete', course, data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-sm btn-danger'
           / = link_to 'New Lesson', new_lesson_path(@lesson), class: 'btn btn-sm btn-secondary float-end'
         / = button_to 'Delete', course, method: :delete, form: { data: { turbo_confirm: 'Are you sure?' } }, class: 'btn btn-sm btn-danger'
+      - if policy(course).destroy?
+        .card-footer
+          - if course.published?
+            .badge.bg-success published
+          - else
+            .badge.bg-danger unpublished
+          - if course.approved?
+            .badge.bg-success approved
+          - else
+            .badge.bg-danger unapproved
+      - if policy(course).approve?
+        .card-footer
+          - if course.approved?
+            = button_to 'unapprove', unapprove_course_path(course), method: :patch, class: 'btn btn-sm btn-danger'
+          - else
+            = button_to 'approve', approve_course_path(course), method: :patch, class: 'btn btn-sm btn-success'
+
+

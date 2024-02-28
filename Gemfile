@@ -66,6 +66,8 @@ gem 'rolify', '~> 6.0', '>= 6.0.1' # create rols to users
 gem 'pundit', '~> 2.3', '>= 2.3.1' # limit the access of users
 gem 'exception_notification', '~> 4.5' # sending emails with user errors in production
 gem 'pagy', '~> 6.4', '>= 6.4.3' # New pagination
+gem 'chartkick', '~> 5.0', '>= 5.0.5' #Grafice charts
+gem 'groupdate', '~> 6.4' # necesary for group data for chart
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

@@ -77,6 +77,11 @@
                 .fa.fa-cog
                 Admin
               .dropdown-menu.dropdown-menu-end{"aria-labelledby" => "adminDropdown"}
+                = link_to unapproved_courses_path, class: "dropdown-item" do
+                  .fa.fa-graduation-cap
+                  Unapproved courses
+                  .badge.bg-danger
+                    = Course.unapproved.count
                 = link_to users_path, class: "dropdown-item" do
                   .fa.fa-lock-open
                   Users
@@ -90,7 +95,9 @@
                 = link_to activity_path, class: "dropdown-item" do
                   .fa.fa-bell
                   Activity 
-        
+                = link_to analytics_path, class: "dropdown-item" do
+                  .fa.fa-chart-line
+                  Analytics 
         %ul.navbar-nav.me-right
           / %li.nav-item{class: "#{'active font-weight-bold' if current_page?(activity_path)}"}
           /   = link_to activity_path, class: 'nav-link' do

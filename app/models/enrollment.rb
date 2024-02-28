@@ -10,8 +10,8 @@ class Enrollment < ApplicationRecord
 
   validates :user, :course, presence: true
 
-  validates_presence_of :rating, if: :review?
-  validates_presence_of :review
+  validates :rating, presence: { if: :review? }
+  validates :review, presence: { if: :rating? }
 
   validates_uniqueness_of :user_id, scope: :course_id  #user cant be subscribed to the same course twice
   validates_uniqueness_of :course_id, scope: :user_id  #user cant be subscribed to the same course twice
