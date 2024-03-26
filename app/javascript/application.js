@@ -12,6 +12,5 @@ library.add(far, fas, fab)
 import "trix"
 import "@rails/actiontext"
 ////////////////
-import “./add_jquery”;
 
 
