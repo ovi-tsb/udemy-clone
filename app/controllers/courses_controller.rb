@@ -1,6 +1,7 @@
 class CoursesController < ApplicationController
-  before_action :set_course, only: %i[ show edit update destroy approve unapprove ]
-
+  skip_before_action :authenticate_user!, :only => [:show]
+  before_action :set_course, only: %i[ show edit update destroy approve unapprove analytics]
+  
   # GET /courses or /courses.json
   def index
     @ransack_path = courses_path
@@ -51,11 +52,13 @@ class CoursesController < ApplicationController
     @pagy, @courses = pagy(@ransack_courses.result.includes(:user))
     render 'index'
   end
-
+  def analytics
+    authorize @course, :owner?
+  end
   # GET /courses/1 or /courses/1.json
   def show
     authorize @course
-    @lessons = @course.lessons
+    @lessons = @course.lessons.rank(:row_order)
     @enrollments_with_review = @course.enrollments.reviewed
   end
 

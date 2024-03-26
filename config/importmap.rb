@@ -9,3 +9,6 @@ pin "@rails/ujs", to: "https://ga.jspm.io/npm:@rails/ujs@7.1.2/app/assets/javasc
 pin "@fortawesome/fontawesome-free", to: "https://ga.jspm.io/npm:@fortawesome/fontawesome-free@6.5.1/js/all.js"
 pin "trix"
 pin "@rails/actiontext", to: "actiontext.js"
+
+# NOTE: pin jquery to jsdelivr instead of jspm
+pin "jquery", to: "https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js"
