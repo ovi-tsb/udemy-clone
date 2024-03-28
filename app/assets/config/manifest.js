@@ -5,4 +5,7 @@
 //= link_tree ../../../node_modules/@fortawesome/fontawesome-free/webfonts
 //= link main.css
 //= link actiontext.css
-
+//= link controllers/application.js
+//= link controllers/hello_controller.js
+//= link controllers/home_controller.js
+//= link controllers/index.js

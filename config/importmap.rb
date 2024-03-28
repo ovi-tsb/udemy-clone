@@ -11,4 +11,11 @@ pin "trix"
 pin "@rails/actiontext", to: "actiontext.js"
 
 # NOTE: pin jquery to jsdelivr instead of jspm
-pin "jquery", to: "https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js"
+# pin "jquery", to: "https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js"
+pin "jquery", to: "https://ga.jspm.io/npm:jquery@3.6.0/dist/jquery.js", preload: true
+pin "popper", to: 'popper.js', preload: true
+pin "bootstrap", to: 'bootstrap.min.js', preload: true
+
+pin "jquery", to: "jquery.min.js", preload: true
+pin "jquery_ujs", to: "jquery_ujs.js", preload: true
+pin "jquery-ui", to: "jquery-ui.min.js", preload: true

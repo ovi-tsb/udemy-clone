@@ -6,6 +6,8 @@
 \/
 = link_to @course.title, course_path(@course)
 %p
+
+
 .row
   .col-lg-8.order-1.order-lg-1
     .mt-4.p-5.bg-secondary.text-white.rounded
@@ -31,7 +33,7 @@
       .float-end
         .fa.fa-spinner
         = number_to_percentage(@course.progress(current_user), precision: 0)
-    %ul.list-group
+    %ul.list-group#sortable{"data-controller" => "home"}
       - @lessons.each do |lesson|
         %li.list-group-item
           = render 'lessons/lesson_preview', lesson: lesson

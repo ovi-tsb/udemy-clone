@@ -69,6 +69,9 @@ gem 'pagy', '~> 6.4', '>= 6.4.3' # New pagination
 gem 'chartkick', '~> 5.0', '>= 5.0.5' #Grafice charts
 gem 'groupdate', '~> 6.4' # necesary for group data for chart
 gem 'ranked-model', '~> 0.4.9' # give a rank of the models
+gem "bootstrap"
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

@@ -11,10 +11,12 @@
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = stylesheet_link_tag "actiontext", "data-turbo-track": "reload" 
     = stylesheet_link_tag "main", "data-turbo-track": "reload"
-    = javascript_include_tag "application", "data-turbo-track": "reload", type: "module"
+    = javascript_importmap_tags
+    / = javascript_include_tag "application", "data-turbo-track": "reload", type: "module"
     / = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
     = javascript_include_tag "//www.google.com/jsapi", "chartkick"
-    
+    %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"}
+
 
   %body
     = render "layouts/header"
