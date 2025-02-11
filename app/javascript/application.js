@@ -14,11 +14,11 @@ import "@rails/actiontext"
 ////////////////
 // import "popper"
 import "bootstrap"
-import "@popperjs/core"
+// import "@popperjs/core"
 import "jquery"
 // import "jquery_ujs"
 import "./jquery_ui"
-import "../stylesheets/application";
+// import "../stylesheets/application";
 
 
 
