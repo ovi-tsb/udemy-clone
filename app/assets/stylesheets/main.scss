@@ -43,3 +43,15 @@
 .form-select.is-invalid{ background-image: none; }
 .form-select.is-valid{ background-image: none; }
 /*to remove check mark on input fields */
+
+
+
+
+.ui-state-highlight { height: 3em; line-height: 1.2em; background-color: yellow; }
+
+.dropdown {
+	z-index: 2000;
+}
+
+
+

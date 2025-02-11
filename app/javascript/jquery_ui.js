@@ -19060,3 +19060,10 @@ var effectsEffectTransfer = effect;
 
 
 } );
+
+
+
+
+
+
+
